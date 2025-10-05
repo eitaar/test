@@ -1,49 +1,174 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import Layout from '../layouts/Layout.astro';
+import bg1 from '../assets/blog-placeholder-1.jpg';
+import bg2 from '../assets/blog-placeholder-2.jpg';
+import bg3 from '../assets/blog-placeholder-3.jpg';
+import bg4 from '../assets/blog-placeholder-4.jpg';
+import bg5 from '../assets/blog-placeholder-5.jpg';
+import bg6 from '../assets/blog-placeholder-about.jpg';
+import wahoot from '../assets/wahoot.png';
+
+const backgroundImages = [bg1.src, bg2.src, bg3.src, bg4.src, bg5.src, bg6.src, wahoot.src];
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layout title="EITAAR - Portfolio" description="EITAAR's creative portfolio and projects">
+  <section
+    class="relative min-h-screen w-full overflow-hidden"
+    id="hero-section"
+    data-bg-images={JSON.stringify(backgroundImages)}
+  >
+    <!-- Background image-->
+    <div
+      class="absolute inset-0 bg-cover bg-center transition-transform duration-75 ease-out"
+      id="parallax-bg"
+    >
+    </div>
+    <!-- Blurred overlay for readability -->
+    <div
+      class="absolute inset-0 bg-black/20 backdrop-blur-sm transition-all duration-300 dark:bg-black/60"
+    >
+    </div>
+
+    <div class="relative z-10 flex min-h-screen flex-col items-center justify-center">
+      <div class="mb-8 rounded-xl bg-accent p-6">
+        <h1 class="text-center font-Bungee text-6xl text-base-100 md:text-8xl">EITAAR</h1>
+      </div>
+      <nav class="flex flex-wrap justify-center gap-8 rounded-xl bg-base-100 p-4">
+        <a
+          href="/about"
+          class="group relative font-Rubik text-xl font-bold text-base-content transition-colors duration-300 hover:text-accent md:text-2xl"
+        >
+          About
+          <span
+            class="absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-300 group-hover:w-full"
+          ></span>
+        </a>
+        <a
+          href="/projects"
+          class="group relative font-Rubik text-xl font-bold text-base-content transition-colors duration-300 hover:text-accent md:text-2xl"
+        >
+          Projects
+          <span
+            class="absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-300 group-hover:w-full"
+          ></span>
+        </a>
+        <a
+          href="/blog"
+          class="group relative font-Rubik text-xl font-bold text-base-content transition-colors duration-300 hover:text-accent md:text-2xl"
+        >
+          Blog
+          <span
+            class="absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-300 group-hover:w-full"
+          ></span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Theme switching buttons in bottom right corner -->
+    <div class="fixed right-6 bottom-6 z-20 flex flex-col gap-3">
+      <div class="flex flex-col items-center gap-2">
+        <!-- Hidden labels for accessibility -->
+        <span id="light-theme-label" class="sr-only">Light Theme</span>
+        <span id="dark-theme-label" class="sr-only">Dark Theme</span>
+
+        <input
+          type="radio"
+          name="theme-buttons"
+          class="theme-controller btn btn-square"
+          style={'background-color: oklch(58% 0.158 241.966);'}
+          value="clean"
+          aria-labelledby="light-theme-label"
+          onclick="localStorage.setItem('theme', 'clean'); document.documentElement.setAttribute('data-theme', 'clean');"
+        />
+        <input
+          type="radio"
+          name="theme-buttons"
+          class="theme-controller btn btn-square"
+          style={'background-color: oklch(77% 0.152 181.912);'}
+          value="night"
+          aria-labelledby="dark-theme-label"
+          onclick="localStorage.setItem('theme', 'night'); document.documentElement.setAttribute('data-theme', 'night');"
+        />
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Select a random background image
+  function setRandomBackground() {
+    const heroSection = document.getElementById('hero-section');
+    const bgElement = document.getElementById('parallax-bg');
+
+    if (!heroSection || !bgElement) {
+      console.warn('Hero section or background element not found');
+      return;
+    }
+
+    try {
+      const bgImagesData = heroSection.getAttribute('data-bg-images');
+      if (!bgImagesData) {
+        console.warn('No background images data found');
+        return;
+      }
+
+      const backgroundImages = JSON.parse(bgImagesData);
+
+      if (backgroundImages.length === 0) {
+        console.warn('No background images found');
+        return;
+      }
+
+      const randomIndex = Math.floor(Math.random() * backgroundImages.length);
+      const selectedImage = backgroundImages[randomIndex];
+
+      bgElement.style.backgroundImage = `url('${selectedImage}')`;
+
+      // Ensure the background is visible immediately
+      bgElement.style.opacity = '1';
+    } catch (error) {
+      console.error('Error setting background image:', error);
+    }
+  }
+
+  // Parallax effect based on mouse movement
+  function handleMouseMove(e: MouseEvent) {
+    const heroSection = document.getElementById('hero-section');
+    const bgElement = document.getElementById('parallax-bg');
+
+    if (!heroSection || !bgElement) return;
+
+    const { clientX, clientY } = e;
+    const { innerWidth, innerHeight } = window;
+
+    // Calculate movement based on mouse position (small movement for subtle effect)
+    const moveX = (clientX / innerWidth - 0.5) * 20;
+    const moveY = (clientY / innerHeight - 0.5) * 20;
+
+    // Apply transform to background
+    bgElement.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`;
+  }
+
+  // Cleanup function to remove event listeners
+  function cleanup() {
+    document.removeEventListener('mousemove', handleMouseMove);
+  }
+
+  // Initialize background and parallax
+  function initializeBackgroundAndParallax() {
+    // Cleanup any existing listeners first
+    cleanup();
+
+    // Set background
+    setRandomBackground();
+
+    // Add mouse move listener for parallax effect
+    document.addEventListener('mousemove', handleMouseMove);
+  }
+
+  // Initialize on Astro page load (for view transitions)
+  document.addEventListener('astro:page-load', initializeBackgroundAndParallax);
+
+  // Cleanup on page unload (for view transitions)
+  document.addEventListener('astro:before-preparation', cleanup);
+</script>

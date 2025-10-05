@@ -1,0 +1,46 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+const { title, description } = Astro.props;
+interface Props {
+  title: string;
+  description: string;
+  //image?: ImageMetadata;
+}
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+    <script is:inline>
+      console.log('Layout loaded');
+      if (localStorage.getItem('theme') === null) {
+        const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = isDarkMode ? 'night' : 'clean';
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+      } else {
+        const savedTheme = localStorage.getItem('theme');
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      }
+    </script>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body><script>
+    document.addEventListener('astro:after-swap', () => {
+      // Reapply theme after Astro partial hydration
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      }
+    });
+  </script>
+</html>
