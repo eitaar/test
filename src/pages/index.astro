@@ -10,7 +10,7 @@ const backgroundImages = [bg1.src, bg2.src, bg3.src, bg4.src];
 
 <Layout title="EITAAR - Portfolio" description="EITAAR's creative portfolio and projects">
   <section
-    class="relative min-h-screen w-full overflow-hidden"
+    class="relative min-h-screen w-full overflow-hidden transition-all"
     id="hero-section"
     data-bg-images={JSON.stringify(backgroundImages)}
   >
@@ -26,7 +26,7 @@ const backgroundImages = [bg1.src, bg2.src, bg3.src, bg4.src];
     >
     </div>
 
-    <div class="relative z-10 flex min-h-screen flex-col items-center justify-center">
+    <div class="relative z-10 flex min-h-screen flex-col items-center justify-center transition">
       <div class="mb-8 rounded-xl bg-accent p-6">
         <h1 class="mb-8 text-center font-Bungee text-6xl text-accent-content md:text-8xl">
           EITAAR
@@ -55,28 +55,38 @@ const backgroundImages = [bg1.src, bg2.src, bg3.src, bg4.src];
     </div>
 
     <!-- Theme switching buttons in bottom right corner -->
-    <div class="fixed right-6 bottom-6 z-20">
+    <div class="fixed right-4 bottom-4 z-20">
       <div class="flex flex-col items-center gap-2">
         <!-- Hidden labels for accessibility -->
         <span id="light-theme-label" class="sr-only">Light Theme</span>
+
         <span id="dark-theme-label" class="sr-only">Dark Theme</span>
         <input
           type="radio"
           name="theme-buttons"
-          class="theme-controller btn btn-square border-0 outline-0"
+          class="theme-controller btn btn-square border-0 outline-0 btn-sm"
           style={'background-color: oklch(58% 0.158 241.966);'}
-          value="clean"
+          value="light-b"
           aria-labelledby="light-theme-label"
-          onclick="localStorage.setItem('theme', 'clean'); document.documentElement.setAttribute('data-theme', 'clean');"
+          onclick="localStorage.setItem('theme', 'light-b'); document.documentElement.setAttribute('data-theme', 'light-b');"
         />
         <input
           type="radio"
           name="theme-buttons"
-          class="theme-controller btn btn-square border-0 outline-0"
+          class="theme-controller btn btn-square border-0 outline-0 btn-sm"
+          style={'background-color: oklch(72% 0.219 149.579);'}
+          value="light-g"
+          aria-labelledby="light-theme-label"
+          onclick="localStorage.setItem('theme', 'light-g'); document.documentElement.setAttribute('data-theme', 'light-g');"
+        />
+        <input
+          type="radio"
+          name="theme-buttons"
+          class="theme-controller btn btn-square border-0 outline-0 btn-sm"
           style={'background-color: #474ec0;'}
-          value="night"
+          value="dark-p"
           aria-labelledby="dark-theme-label"
-          onclick="localStorage.setItem('theme', 'cdark'); document.documentElement.setAttribute('data-theme', 'cdark');"
+          onclick="localStorage.setItem('theme', 'dark-p'); document.documentElement.setAttribute('data-theme', 'dark-p');"
         />
       </div>
     </div>
