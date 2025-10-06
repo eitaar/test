@@ -1,14 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import bg1 from '../assets/blog-placeholder-1.jpg';
-import bg2 from '../assets/blog-placeholder-2.jpg';
-import bg3 from '../assets/blog-placeholder-3.jpg';
-import bg4 from '../assets/blog-placeholder-4.jpg';
-import bg5 from '../assets/blog-placeholder-5.jpg';
-import bg6 from '../assets/blog-placeholder-about.jpg';
-import wahoot from '../assets/wahoot.png';
+import bg1 from '../assets/backgrounds/blog-placeholder-1.webp';
+import bg2 from '../assets/backgrounds/blog-placeholder-2.webp';
+import bg3 from '../assets/backgrounds/blog-placeholder-about.webp';
+import bg4 from '../assets/backgrounds/wahoot.webp';
 
-const backgroundImages = [bg1.src, bg2.src, bg3.src, bg4.src, bg5.src, bg6.src, wahoot.src];
+const backgroundImages = [bg1.src, bg2.src, bg3.src, bg4.src];
 ---
 
 <Layout title="EITAAR - Portfolio" description="EITAAR's creative portfolio and projects">
@@ -17,64 +14,56 @@ const backgroundImages = [bg1.src, bg2.src, bg3.src, bg4.src, bg5.src, bg6.src, 
     id="hero-section"
     data-bg-images={JSON.stringify(backgroundImages)}
   >
-    <!-- Background image-->
-    <div
-      class="absolute inset-0 bg-cover bg-center transition-transform duration-75 ease-out"
+    <img
+      class="absolute inset-0 h-full w-full object-cover transition-opacity duration-75 ease-out"
       id="parallax-bg"
-    >
-    </div>
+      alt="Background image"
+      loading="eager"
+    />
     <!-- Blurred overlay for readability -->
     <div
-      class="absolute inset-0 bg-black/20 backdrop-blur-sm transition-all duration-300 dark:bg-black/60"
+      class="absolute inset-0 bg-black/20 backdrop-blur-sm transition-colors duration-300 dark:bg-black/60"
     >
     </div>
 
     <div class="relative z-10 flex min-h-screen flex-col items-center justify-center">
       <div class="mb-8 rounded-xl bg-accent p-6">
-        <h1 class="text-center font-Bungee text-6xl text-base-100 md:text-8xl">EITAAR</h1>
+        <h1 class="mb-8 text-center font-Bungee text-6xl text-accent-content md:text-8xl">
+          EITAAR
+        </h1>
+        <nav class="flex flex-wrap justify-center gap-8 rounded-xl bg-base-100 p-4">
+          <a
+            href="/about"
+            class="underline-animation group font-Rubik text-xl font-bold text-base-content transition-colors duration-300 hover:text-accent md:text-2xl"
+          >
+            About
+          </a>
+          <a
+            href="/projects"
+            class="underline-animation group font-Rubik text-xl font-bold text-base-content transition-colors duration-300 hover:text-accent md:text-2xl"
+          >
+            Projects
+          </a>
+          <a
+            href="/blog"
+            class="underline-animation group font-Rubik text-xl font-bold text-base-content transition-colors duration-300 hover:text-accent md:text-2xl"
+          >
+            Blog
+          </a>
+        </nav>
       </div>
-      <nav class="flex flex-wrap justify-center gap-8 rounded-xl bg-base-100 p-4">
-        <a
-          href="/about"
-          class="group relative font-Rubik text-xl font-bold text-base-content transition-colors duration-300 hover:text-accent md:text-2xl"
-        >
-          About
-          <span
-            class="absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-300 group-hover:w-full"
-          ></span>
-        </a>
-        <a
-          href="/projects"
-          class="group relative font-Rubik text-xl font-bold text-base-content transition-colors duration-300 hover:text-accent md:text-2xl"
-        >
-          Projects
-          <span
-            class="absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-300 group-hover:w-full"
-          ></span>
-        </a>
-        <a
-          href="/blog"
-          class="group relative font-Rubik text-xl font-bold text-base-content transition-colors duration-300 hover:text-accent md:text-2xl"
-        >
-          Blog
-          <span
-            class="absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-300 group-hover:w-full"
-          ></span>
-        </a>
-      </nav>
     </div>
 
     <!-- Theme switching buttons in bottom right corner -->
-    <div class="fixed right-6 bottom-6 z-20 flex flex-col gap-3">
+    <div class="fixed right-6 bottom-6 z-20">
       <div class="flex flex-col items-center gap-2">
         <!-- Hidden labels for accessibility -->
         <span id="light-theme-label" class="sr-only">Light Theme</span>
         <span id="dark-theme-label" class="sr-only">Dark Theme</span>
-
         <input
           type="radio"
           name="theme-buttons"
-          class="theme-controller btn btn-square"
+          class="theme-controller btn btn-square border-0 outline-0"
           style={'background-color: oklch(58% 0.158 241.966);'}
           value="clean"
           aria-labelledby="light-theme-label"
@@ -83,11 +72,11 @@ const backgroundImages = [bg1.src, bg2.src, bg3.src, bg4.src, bg5.src, bg6.src, 
         <input
           type="radio"
           name="theme-buttons"
-          class="theme-controller btn btn-square"
-          style={'background-color: oklch(77% 0.152 181.912);'}
+          class="theme-controller btn btn-square border-0 outline-0"
+          style={'background-color: #474ec0;'}
           value="night"
           aria-labelledby="dark-theme-label"
-          onclick="localStorage.setItem('theme', 'night'); document.documentElement.setAttribute('data-theme', 'night');"
+          onclick="localStorage.setItem('theme', 'cdark'); document.documentElement.setAttribute('data-theme', 'cdark');"
         />
       </div>
     </div>
@@ -98,7 +87,7 @@ const backgroundImages = [bg1.src, bg2.src, bg3.src, bg4.src, bg5.src, bg6.src, 
   // Select a random background image
   function setRandomBackground() {
     const heroSection = document.getElementById('hero-section');
-    const bgElement = document.getElementById('parallax-bg');
+    const bgElement = document.getElementById('parallax-bg') as HTMLImageElement;
 
     if (!heroSection || !bgElement) {
       console.warn('Hero section or background element not found');
@@ -122,9 +111,9 @@ const backgroundImages = [bg1.src, bg2.src, bg3.src, bg4.src, bg5.src, bg6.src, 
       const randomIndex = Math.floor(Math.random() * backgroundImages.length);
       const selectedImage = backgroundImages[randomIndex];
 
-      bgElement.style.backgroundImage = `url('${selectedImage}')`;
+      bgElement.src = selectedImage;
 
-      // Ensure the background is visible immediately
+      // Ensure the image is visible immediately
       bgElement.style.opacity = '1';
     } catch (error) {
       console.error('Error setting background image:', error);
@@ -134,7 +123,7 @@ const backgroundImages = [bg1.src, bg2.src, bg3.src, bg4.src, bg5.src, bg6.src, 
   // Parallax effect based on mouse movement
   function handleMouseMove(e: MouseEvent) {
     const heroSection = document.getElementById('hero-section');
-    const bgElement = document.getElementById('parallax-bg');
+    const bgElement = document.getElementById('parallax-bg') as HTMLImageElement;
 
     if (!heroSection || !bgElement) return;
 
@@ -145,7 +134,7 @@ const backgroundImages = [bg1.src, bg2.src, bg3.src, bg4.src, bg5.src, bg6.src, 
     const moveX = (clientX / innerWidth - 0.5) * 20;
     const moveY = (clientY / innerHeight - 0.5) * 20;
 
-    // Apply transform to background
+    // Apply transform to background image
     bgElement.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`;
   }
 

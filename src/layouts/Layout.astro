@@ -19,7 +19,7 @@ interface Props {
       console.log('Layout loaded');
       if (localStorage.getItem('theme') === null) {
         const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const theme = isDarkMode ? 'night' : 'clean';
+        const theme = isDarkMode ? 'cdark' : 'clean';
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
       } else {

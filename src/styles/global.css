@@ -1,8 +1,42 @@
 @import 'tailwindcss';
 @plugin "daisyui" {
-  themes: night --prefersdark;
 }
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@plugin "daisyui/theme" {
+  name: 'cdark';
+  default: false;
+  prefersdark: true;
+  color-scheme: 'dark';
+  --color-base-100: #1b1c3f;
+  --color-base-200: #161736;
+  --color-base-300: #11122c;
+  --color-base-content: #cbcdd6;
+  --color-primary: #8a97df;
+  --color-primary-content: #070812;
+  --color-secondary: #e17e85;
+  --color-secondary-content: #120506;
+  --color-accent: #474ec0;
+  --color-accent-content: #d6dcf5;
+  --color-neutral: #262931;
+  --color-neutral-content: #cfd0d2;
+  --color-info: #2563eb;
+  --color-info-content: #d2e2ff;
+  --color-success: #16a34a;
+  --color-success-content: #000a02;
+  --color-warning: #d97706;
+  --color-warning-content: #110500;
+  --color-error: #dc2626;
+  --color-error-content: #ffd9d4;
+  --radius-selector: 2rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.5rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
 
 @plugin "daisyui/theme" {
   name: 'clean';
@@ -18,7 +52,7 @@
   --color-secondary: #7828c8;
   --color-secondary-content: oklch(94% 0.028 342.258);
   --color-accent: oklch(58% 0.158 241.966);
-  --color-accent-content: oklch(38% 0.063 188.416);
+  --color-accent-content: oklch(100% 0 0);
   --color-neutral: oklch(0% 0 0);
   --color-neutral-content: oklch(100% 0 0);
   --color-info: oklch(74% 0.16 232.661);
@@ -101,4 +135,24 @@
   --font-Bungee: Bungee, ui-sans-serif, system-ui, sans-serif;
   --font-Rubik: Rubik, ui-sans-serif, system-ui, sans-serif;
   --tracking-tightest: -0.075em;
+}
+
+/* Custom underline animation component */
+.underline-animation {
+  position: relative;
+}
+
+.underline-animation::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  @apply bg-accent;
+  transition: all 300ms ease;
+}
+
+.underline-animation:hover::after {
+  width: 100%;
 }
