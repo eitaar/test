@@ -1,0 +1,79 @@
+---
+export const prerender = false;
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="EITAAR" description="EITAAR's portfolio and projects">
+  <section class="relative min-h-screen w-full overflow-hidden transition-all" id="hero-section">
+    <!-- Blurred overlay for readability -->
+    <div
+      class="absolute inset-0 bg-black/20 backdrop-blur-sm transition-colors duration-300 dark:bg-black/60"
+    >
+    </div>
+
+    <div class="relative z-10 flex min-h-screen flex-col items-center justify-center transition">
+      <div class="bg-accent mb-8 rounded-xl p-6">
+        <h1 class="text-accent-content mb-8 text-center font-Bungee text-6xl md:text-8xl">
+          EITAAR
+        </h1>
+        <nav class="bg-base-100 flex flex-wrap justify-center gap-8 rounded-xl p-4">
+          <a
+            href="/about"
+            class="underline-animation group text-base-content hover:text-accent font-Rubik text-xl font-bold transition-colors duration-300 md:text-2xl"
+          >
+            About
+          </a>
+          <a
+            href="/projects"
+            class="underline-animation group text-base-content hover:text-accent font-Rubik text-xl font-bold transition-colors duration-300 md:text-2xl"
+          >
+            Projects
+          </a>
+          <a
+            href="/blog"
+            class="underline-animation group text-base-content hover:text-accent font-Rubik text-xl font-bold transition-colors duration-300 md:text-2xl"
+          >
+            Blog
+          </a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Theme switching buttons in bottom right corner -->
+    <div class="fixed right-4 bottom-4 z-20">
+      <div class="flex flex-col items-center gap-2">
+        <!-- Hidden labels for accessibility -->
+        <span id="light-theme-label" class="sr-only">Light Theme</span>
+
+        <span id="dark-theme-label" class="sr-only">Dark Theme</span>
+        <input
+          type="radio"
+          name="theme-buttons"
+          class="theme-controller btn btn-square btn-sm border-0 outline-0"
+          style={'background-color: oklch(58% 0.158 241.966);'}
+          value="light-b"
+          aria-labelledby="light-theme-label"
+          onclick="localStorage.setItem('theme', 'light-b'); document.documentElement.setAttribute('data-theme', 'light-b');"
+        />
+        <input
+          type="radio"
+          name="theme-buttons"
+          class="theme-controller btn btn-square btn-sm border-0 outline-0"
+          style={'background-color: oklch(72% 0.219 149.579);'}
+          value="light-g"
+          aria-labelledby="light-theme-label"
+          onclick="localStorage.setItem('theme', 'light-g'); document.documentElement.setAttribute('data-theme', 'light-g');"
+        />
+        <input
+          type="radio"
+          name="theme-buttons"
+          class="theme-controller btn btn-square btn-sm border-0 outline-0"
+          style={'background-color: #474ec0;'}
+          value="dark-p"
+          aria-labelledby="dark-theme-label"
+          onclick="localStorage.setItem('theme', 'dark-p'); document.documentElement.setAttribute('data-theme', 'dark-p');"
+        />
+      </div>
+    </div>
+  </section>
+</Layout>

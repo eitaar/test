@@ -1,21 +1,16 @@
 ---
 import '../styles/global.css';
-//import type { ImageMetadata } from 'astro';
-//import FallbackImage from '../assets/blog-placeholder-1.jpg';
 import { ClientRouter } from 'astro:transitions';
 import avatarIcon from '../assets/img/avatar.webp';
 
 interface Props {
   title: string;
   description: string;
-  //image?: ImageMetadata;
 }
 
-const canonicalURL = Astro.site 
-  ? new URL(Astro.url.pathname, Astro.site)
-  : Astro.url;
+const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astro.url;
 
-const { title, description /*image = FallbackImage*/ } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -32,13 +27,9 @@ const { title, description /*image = FallbackImage*/ } = Astro.props;
 <meta name="generator" content={Astro.generator} />
 
 <!-- Font preloads -->
-<link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
-<link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin />
 <link rel="preload" href="/fonts/bungee-regular.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/fonts/rubik-regular.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/fonts/rubik-bold.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="preload" href="/fonts/quantico-regular.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="preload" href="/fonts/quantico-bold.woff2" as="font" type="font/woff2" crossorigin />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
@@ -53,12 +44,18 @@ const { title, description /*image = FallbackImage*/ } = Astro.props;
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={Astro.site ? new URL(avatarIcon.src, Astro.site) : avatarIcon.src} />
+<meta
+  property="og:image"
+  content={Astro.site ? new URL(avatarIcon.src, Astro.site) : avatarIcon.src}
+/>
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={Astro.site ? new URL(avatarIcon.src, Astro.site) : avatarIcon.src} />
+<meta
+  property="twitter:image"
+  content={Astro.site ? new URL(avatarIcon.src, Astro.site) : avatarIcon.src}
+/>
 <ClientRouter />

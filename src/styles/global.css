@@ -1,145 +1,11 @@
 @import 'tailwindcss';
-@plugin "daisyui" {
-}
+
+/* Custom dark variant (Tailwind v4 style) */
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
-@plugin "daisyui/theme" {
-  name: 'dark-p';
-  default: false;
-  prefersdark: true;
-  color-scheme: 'dark';
-  --color-base-100: #1b1c3f;
-  --color-base-200: #161736;
-  --color-base-300: #11122c;
-  --color-base-content: #cbcdd6;
-  --color-primary: #8a97df;
-  --color-primary-content: #070812;
-  --color-secondary: #e17e85;
-  --color-secondary-content: #120506;
-  --color-accent: #474ec0;
-  --color-accent-content: #d6dcf5;
-  --color-neutral: #262931;
-  --color-neutral-content: #cfd0d2;
-  --color-info: #2563eb;
-  --color-info-content: #d2e2ff;
-  --color-success: #16a34a;
-  --color-success-content: #000a02;
-  --color-warning: #d97706;
-  --color-warning-content: #110500;
-  --color-error: #dc2626;
-  --color-error-content: #ffd9d4;
-  --radius-selector: 2rem;
-  --radius-field: 0.25rem;
-  --radius-box: 0.5rem;
-  --size-selector: 0.25rem;
-  --size-field: 0.25rem;
-  --border: 1px;
-  --depth: 0;
-  --noise: 0;
-}
-
-@plugin "daisyui/theme" {
-  name: 'light-b';
-  default: true;
-  prefersdark: false;
-  color-scheme: 'light';
-  --color-base-100: oklch(100% 0 0);
-  --color-base-200: #f4f4f5;
-  --color-base-300: #e4e4e7;
-  --color-base-content: #11181c;
-  --color-primary: #006fee;
-  --color-primary-content: oklch(93% 0.034 272.788);
-  --color-secondary: #7828c8;
-  --color-secondary-content: oklch(94% 0.028 342.258);
-  --color-accent: oklch(58% 0.158 241.966);
-  --color-accent-content: oklch(100% 0 0);
-  --color-neutral: oklch(0% 0 0);
-  --color-neutral-content: oklch(100% 0 0);
-  --color-info: oklch(74% 0.16 232.661);
-  --color-info-content: oklch(29% 0.066 243.157);
-  --color-success: #17c964;
-  --color-success-content: oklch(37% 0.077 168.94);
-  --color-warning: #f5a524;
-  --color-warning-content: oklch(41% 0.112 45.904);
-  --color-error: #f31260;
-  --color-error-content: oklch(27% 0.105 12.094);
-  --radius-selector: 2rem;
-  --radius-field: 0.25rem;
-  --radius-box: 0.5rem;
-  --size-selector: 0.25rem;
-  --size-field: 0.25rem;
-  --border: 1px;
-  --depth: 0;
-  --noise: 0;
-}
-
-@plugin "daisyui/theme" {
-  name: 'light-g';
-  default: false;
-  prefersdark: false;
-  color-scheme: 'light';
-  --color-base-100: oklch(100% 0 0);
-  --color-base-200: #f4f4f5;
-  --color-base-300: #e4e4e7;
-  --color-base-content: #11181c;
-  --color-primary: #006fee;
-  --color-primary-content: oklch(93% 0.034 272.788);
-  --color-secondary: #7828c8;
-  --color-secondary-content: oklch(94% 0.028 342.258);
-  --color-accent: oklch(72% 0.219 149.579);
-  --color-accent-content: oklch(100% 0 0);
-  --color-neutral: oklch(0% 0 0);
-  --color-neutral-content: oklch(100% 0 0);
-  --color-info: oklch(74% 0.16 232.661);
-  --color-info-content: oklch(29% 0.066 243.157);
-  --color-success: #17c964;
-  --color-success-content: oklch(37% 0.077 168.94);
-  --color-warning: #f5a524;
-  --color-warning-content: oklch(41% 0.112 45.904);
-  --color-error: #f31260;
-  --color-error-content: oklch(27% 0.105 12.094);
-  --radius-selector: 2rem;
-  --radius-field: 0.25rem;
-  --radius-box: 0.5rem;
-  --size-selector: 0.25rem;
-  --size-field: 0.25rem;
-  --border: 1px;
-  --depth: 0;
-  --noise: 0;
-}
-
-@font-face {
-  font-family: 'Atkinson';
-  font-display: swap;
-  font-weight: 400;
-  font-style: normal;
-  src: url('/fonts/atkinson-regular.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Atkinson';
-  font-display: swap;
-  font-weight: 700;
-  font-style: normal;
-  src: url('/fonts/atkinson-bold.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Quantico';
-  font-display: swap;
-  font-weight: 400;
-  font-style: normal;
-  src: url('/fonts/quantico-regular.woff2') format('woff2');
-}
-
-@font-face {
-  font-display: swap;
-  font-family: 'Quantico';
-  font-style: normal;
-  font-weight: 700;
-  src: url('/fonts/quantico-bold.woff2') format('woff2');
-}
-
+/* --------------------
+   Font setup
+-------------------- */
 @font-face {
   font-family: 'Bungee';
   font-display: swap;
@@ -165,33 +31,55 @@
 }
 
 @theme {
-  --font-Atkinson: Atkinson, ui-sans-serif, system-ui, sans-serif;
-  --font-Quantico: Quantico, ui-sans-serif, system-ui, sans-serif;
   --font-Bungee: Bungee, ui-sans-serif, system-ui, sans-serif;
   --font-Rubik: Rubik, ui-sans-serif, system-ui, sans-serif;
   --tracking-tightest: -0.075em;
+  --color-base: #c0ccd3;
 }
 
-/* Custom underline animation component */
+body {
+  @apply bg-base;
+}
+
+.neumorphism {
+  @apply rounded-lg bg-base;
+  box-shadow:
+    5px 5px 10px #a3adb3,
+    -5px -5px 10px #ddebf3;
+}
+.neumorphism-inner {
+  @apply rounded-lg bg-base;
+  box-shadow:
+    inset -5px -5px 5px #ddebf3,
+    inset 5px 5px 5px #a3adb3;
+}
 .underline-animation {
   position: relative;
+}
+
+.link {
+  @apply transition-colors duration-300;
+}
+
+.link:hover {
+  @apply text-sky-500;
 }
 
 .underline-animation::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   height: 2px;
   width: 0;
-  @apply bg-accent;
-  transition: all 300ms ease;
+  @apply bg-sky-500;
+  transition: width 300ms ease;
 }
 
 .underline-animation:hover::after {
   width: 100%;
 }
-
 * {
   transition:
     background-color 0.3s ease-out,

@@ -48,4 +48,3 @@ when suggesting code, consider the following tech stacks:
 - TypeScript
 - Astro v5.x.x
 - Tailwind CSS v4.x.x - **no more tailwind.config.js**
-- DaisyUI v5.x.x
