@@ -34,35 +34,69 @@
   --font-Bungee: Bungee, ui-sans-serif, system-ui, sans-serif;
   --font-Rubik: Rubik, ui-sans-serif, system-ui, sans-serif;
   --tracking-tightest: -0.075em;
-  --color-base: #c0ccd3;
+  --color-base-light: #c0ccd3;
+  --color-base-dark: #23283d;
+  --color-content-light: #1a1f30;
+  --color-content-dark: #d6dce5;
+}
+
+:root {
+  color-scheme: light;
+  --surface-base: var(--color-base-light);
+  --surface-content: var(--color-content-light);
+  --neu-shadow: 5px 5px 10px #a3adb3, -5px -5px 10px #ddebf3;
+  --neu-shadow-inset: inset -5px -5px 5px #ddebf3, inset 5px 5px 5px #a3adb3;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+  --surface-base: var(--color-base-dark);
+  --surface-content: var(--color-content-dark);
+  --neu-shadow: 5px 5px 10px #0e0e0e, -5px -5px 10px #1a1f30;
+  --neu-shadow-inset: inset -5px -5px 5px #3b4160, inset 5px 5px 5px #1a1f30;
 }
 
 body {
-  @apply bg-base;
+  background-color: var(--surface-base);
+  color: var(--surface-content);
 }
 
 .neumorphism {
-  @apply rounded-lg bg-base;
-  box-shadow:
-    5px 5px 10px #a3adb3,
-    -5px -5px 10px #ddebf3;
+  border-radius: 0.75rem;
+  background-color: var(--surface-base);
+  box-shadow: var(--neu-shadow);
 }
+
 .neumorphism-inner {
-  @apply rounded-lg bg-base;
-  box-shadow:
-    inset -5px -5px 5px #ddebf3,
-    inset 5px 5px 5px #a3adb3;
+  border-radius: 0.75rem;
+  background-color: var(--surface-base);
+  box-shadow: var(--neu-shadow-inset);
 }
+
+.neumorphism-btn {
+  border: 0;
+  outline: 0;
+  border-radius: 0.75rem;
+  background-color: var(--surface-base);
+  box-shadow: var(--neu-shadow);
+}
+
+/* Checked state for radio buttons */
+input[type='radio']:checked.neumorphism-btn {
+  box-shadow: var(--neu-shadow-inset);
+}
+
 .underline-animation {
   position: relative;
 }
 
 .link {
-  @apply transition-colors duration-300;
+  color: var(--surface-content);
+  transition: color 0.3s ease;
 }
 
 .link:hover {
-  @apply text-sky-500;
+  color: #0ea5e9;
 }
 
 .underline-animation::after {
@@ -73,15 +107,27 @@ body {
   transform: translateX(-50%);
   height: 2px;
   width: 0;
-  @apply bg-sky-500;
+  background-color: #0ea5e9;
   transition: width 300ms ease;
 }
 
 .underline-animation:hover::after {
   width: 100%;
 }
+.theme-btn {
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  outline: 0;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  appearance: none;
+}
 * {
   transition:
     background-color 0.3s ease-out,
     color 0.3s ease-out;
+}
+p a {
+  color: var(--surface-content);
 }

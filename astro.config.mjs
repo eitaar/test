@@ -5,9 +5,11 @@ import node from '@astrojs/node';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
+import icon from 'astro-icon';
+
 export default defineConfig({
   site: 'https://eitaar.dev',
-  integrations: [mdx(), sitemap()],
+  integrations: [mdx(), sitemap(), icon()],
   output: 'static',
   //adapter: cloudflare(),
   adapter: node({

@@ -1,11 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
 ---
 
 <Layout title="EITAAR" description="EITAAR's portfolio and projects">
   <div class="flex min-h-screen items-center justify-center">
     <div class="card neumorphism color-base flex flex-col items-center justify-center p-6">
-      <h2 class="mb-4 font-Bungee text-8xl tracking-tight text-blue-900">EITAAR</h2>
+      <h2 class="mb-4 font-Bungee text-8xl tracking-tight text-blue-900 dark:text-rose-400">
+        EITAAR
+      </h2>
       <div class="neumorphism-inner w-full">
         <nav class="flex flex-wrap justify-center gap-8 rounded-xl p-4">
           <a href="/about" class="underline-animation group link font-Rubik text-2xl font-bold">
@@ -19,6 +22,36 @@ import Layout from '../layouts/Layout.astro';
           </a>
         </nav>
       </div>
+    </div>
+  </div>
+  <div class="fixed right-5 bottom-5 flex justify-center gap-3 p-3">
+    <div class="relative h-12 w-12">
+      <span id="light-theme-label" class="sr-only">Light Theme</span>
+      <span id="dark-theme-label" class="sr-only">Dark Theme</span>
+      <input
+        type="radio"
+        name="theme"
+        class="neumorphism-btn h-12 w-12 appearance-none"
+        aria-labelledby="light-theme-label"
+        onclick="localStorage.setItem('theme', 'light'); document.documentElement.setAttribute('data-theme', 'light');"
+      />
+      <Icon
+        name="mdi:white-balance-sunny"
+        class="pointer-events-none absolute inset-0 m-auto h-6 w-6 fill-current"
+      />
+    </div>
+    <div class="relative h-12 w-12">
+      <input
+        type="radio"
+        name="theme"
+        class="neumorphism-btn h-12 w-12 appearance-none"
+        aria-labelledby="dark-theme-label"
+        onclick="localStorage.setItem('theme', 'dark'); document.documentElement.setAttribute('data-theme', 'dark');"
+      />
+      <Icon
+        name="mdi:moon-and-stars"
+        class="pointer-events-none absolute inset-0 m-auto h-6 w-6 fill-current"
+      />
     </div>
   </div>
 </Layout>

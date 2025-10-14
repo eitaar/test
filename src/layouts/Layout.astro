@@ -19,7 +19,7 @@ interface Props {
       console.log('Layout loaded');
       if (localStorage.getItem('theme') === null) {
         const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const theme = isDarkMode ? 'dark-p' : 'light-b';
+        const theme = isDarkMode ? 'dark' : 'light';
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
       } else {
@@ -34,13 +34,17 @@ interface Props {
       <slot />
     </main>
     <Footer />
-  </body><script>
-    document.addEventListener('astro:after-swap', () => {
-      // Reapply theme after Astro partial hydration
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-      }
-    });
-  </script>
+
+    <script>
+      // Handle Astro view transitions
+      document.addEventListener('astro:after-swap', () => {
+        console.log('Astro view swapped');
+        // Reapply theme after Astro partial hydration
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+          document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+      });
+    </script>
+  </body>
 </html>
