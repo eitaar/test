@@ -2,4 +2,402 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="About" description="Learn more about eitaar" />
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Portfolio - About" description="Web Designer & Frontend Developerについて">
+  <!-- Page Header -->
+  <section class="pt-32 pb-16 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="page-title font-Orbitron font-black text-5xl md:text-7xl mb-6 opacity-0 translate-y-8">
+        <span class="glow-text">About</span>
+      </h1>
+      <p class="page-subtitle text-xl text-white/80 font-Inter max-w-2xl mx-auto opacity-0 translate-y-8">
+        Passionate about creating beautiful and functional digital experiences
+      </p>
+    </div>
+  </section>
+
+  <!-- Bio Section -->
+  <section class="pb-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Profile Image Placeholder -->
+        <div class="profile-image opacity-0 translate-x-8">
+          <div class="aspect-square bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-600 rounded-2xl p-1">
+            <div class="w-full h-full bg-black rounded-2xl flex items-center justify-center">
+              <div class="w-32 h-32 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-full flex items-center justify-center">
+                <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Bio Content -->
+        <div class="bio-content space-y-6 opacity-0 translate-x-8">
+          <h2 class="text-3xl font-Orbitron font-bold text-white mb-4">
+            Hello, I'm a <span class="text-cyan-400">Web Designer</span>
+          </h2>
+          
+          <p class="text-white/80 font-Inter leading-relaxed">
+            I'm passionate about creating digital experiences that combine aesthetic beauty with functional design. 
+            With a focus on modern web technologies and user-centered design principles, I bring ideas to life 
+            through clean code and intuitive interfaces.
+          </p>
+          
+          <p class="text-white/80 font-Inter leading-relaxed">
+            My approach involves staying current with the latest trends in web development while maintaining 
+            a strong foundation in design fundamentals. I believe that great design should be both beautiful 
+            and accessible to everyone.
+          </p>
+          
+          <div class="flex flex-wrap gap-3 pt-4">
+            <span class="px-4 py-2 bg-cyan-500/20 text-cyan-400 rounded-full text-sm font-Inter">Creative</span>
+            <span class="px-4 py-2 bg-purple-500/20 text-purple-400 rounded-full text-sm font-Inter">Detail-oriented</span>
+            <span class="px-4 py-2 bg-pink-500/20 text-pink-400 rounded-full text-sm font-Inter">Problem-solver</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="section-title text-3xl md:text-4xl font-Orbitron font-bold text-center mb-16 opacity-0 translate-y-8">
+        Skills & Technologies
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Frontend -->
+        <div class="skill-category p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 opacity-0 translate-y-8">
+          <div class="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-full flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+            </svg>
+          </div>
+          
+          <h3 class="text-xl font-Orbitron font-bold mb-4 text-white">Frontend</h3>
+          
+          <div class="space-y-3">
+            <div class="skill-item">
+              <div class="flex justify-between mb-1">
+                <span class="text-white/80 font-Inter text-sm">React & Next.js</span>
+                <span class="text-cyan-400 text-sm">95%</span>
+              </div>
+              <div class="w-full bg-white/10 rounded-full h-2">
+                <div class="bg-gradient-to-r from-cyan-400 to-blue-600 h-2 rounded-full skill-bar" style="width: 0%;" data-width="95"></div>
+              </div>
+            </div>
+            
+            <div class="skill-item">
+              <div class="flex justify-between mb-1">
+                <span class="text-white/80 font-Inter text-sm">TypeScript</span>
+                <span class="text-cyan-400 text-sm">90%</span>
+              </div>
+              <div class="w-full bg-white/10 rounded-full h-2">
+                <div class="bg-gradient-to-r from-cyan-400 to-blue-600 h-2 rounded-full skill-bar" style="width: 0%;" data-width="90"></div>
+              </div>
+            </div>
+            
+            <div class="skill-item">
+              <div class="flex justify-between mb-1">
+                <span class="text-white/80 font-Inter text-sm">Astro</span>
+                <span class="text-cyan-400 text-sm">85%</span>
+              </div>
+              <div class="w-full bg-white/10 rounded-full h-2">
+                <div class="bg-gradient-to-r from-cyan-400 to-blue-600 h-2 rounded-full skill-bar" style="width: 0%;" data-width="85"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Design -->
+        <div class="skill-category p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 opacity-0 translate-y-8">
+          <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-600 rounded-full flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"/>
+            </svg>
+          </div>
+          
+          <h3 class="text-xl font-Orbitron font-bold mb-4 text-white">Design</h3>
+          
+          <div class="space-y-3">
+            <div class="skill-item">
+              <div class="flex justify-between mb-1">
+                <span class="text-white/80 font-Inter text-sm">UI/UX Design</span>
+                <span class="text-purple-400 text-sm">90%</span>
+              </div>
+              <div class="w-full bg-white/10 rounded-full h-2">
+                <div class="bg-gradient-to-r from-purple-400 to-pink-600 h-2 rounded-full skill-bar" style="width: 0%;" data-width="90"></div>
+              </div>
+            </div>
+            
+            <div class="skill-item">
+              <div class="flex justify-between mb-1">
+                <span class="text-white/80 font-Inter text-sm">Figma</span>
+                <span class="text-purple-400 text-sm">85%</span>
+              </div>
+              <div class="w-full bg-white/10 rounded-full h-2">
+                <div class="bg-gradient-to-r from-purple-400 to-pink-600 h-2 rounded-full skill-bar" style="width: 0%;" data-width="85"></div>
+              </div>
+            </div>
+            
+            <div class="skill-item">
+              <div class="flex justify-between mb-1">
+                <span class="text-white/80 font-Inter text-sm">Tailwind CSS</span>
+                <span class="text-purple-400 text-sm">95%</span>
+              </div>
+              <div class="w-full bg-white/10 rounded-full h-2">
+                <div class="bg-gradient-to-r from-purple-400 to-pink-600 h-2 rounded-full skill-bar" style="width: 0%;" data-width="95"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skill-category p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 opacity-0 translate-y-8">
+          <div class="w-16 h-16 bg-gradient-to-br from-pink-400 to-red-600 rounded-full flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          
+          <h3 class="text-xl font-Orbitron font-bold mb-4 text-white">Tools</h3>
+          
+          <div class="space-y-3">
+            <div class="skill-item">
+              <div class="flex justify-between mb-1">
+                <span class="text-white/80 font-Inter text-sm">Git & GitHub</span>
+                <span class="text-pink-400 text-sm">90%</span>
+              </div>
+              <div class="w-full bg-white/10 rounded-full h-2">
+                <div class="bg-gradient-to-r from-pink-400 to-red-600 h-2 rounded-full skill-bar" style="width: 0%;" data-width="90"></div>
+              </div>
+            </div>
+            
+            <div class="skill-item">
+              <div class="flex justify-between mb-1">
+                <span class="text-white/80 font-Inter text-sm">GSAP</span>
+                <span class="text-pink-400 text-sm">80%</span>
+              </div>
+              <div class="w-full bg-white/10 rounded-full h-2">
+                <div class="bg-gradient-to-r from-pink-400 to-red-600 h-2 rounded-full skill-bar" style="width: 0%;" data-width="80"></div>
+              </div>
+            </div>
+            
+            <div class="skill-item">
+              <div class="flex justify-between mb-1">
+                <span class="text-white/80 font-Inter text-sm">Vite</span>
+                <span class="text-pink-400 text-sm">85%</span>
+              </div>
+              <div class="w-full bg-white/10 rounded-full h-2">
+                <div class="bg-gradient-to-r from-pink-400 to-red-600 h-2 rounded-full skill-bar" style="width: 0%;" data-width="85"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Timeline -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="section-title text-3xl md:text-4xl font-Orbitron font-bold text-center mb-16 opacity-0 translate-y-8">
+        Experience
+      </h2>
+      
+      <div class="relative">
+        <!-- Timeline Line -->
+        <div class="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-cyan-400 via-purple-500 to-pink-600"></div>
+        
+        <div class="space-y-12">
+          <!-- Experience 1 -->
+          <div class="timeline-item flex items-start opacity-0 translate-x-8">
+            <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-full flex items-center justify-center relative z-10">
+              <div class="w-8 h-8 bg-white rounded-full"></div>
+            </div>
+            
+            <div class="ml-8">
+              <div class="text-cyan-400 font-Inter text-sm mb-1">2023 - Present</div>
+              <h3 class="text-xl font-Orbitron font-bold text-white mb-2">Freelance Web Designer</h3>
+              <p class="text-white/70 font-Inter leading-relaxed">
+                Creating modern, responsive websites and web applications for clients across various industries. 
+                Specializing in user experience design and frontend development with React and Astro.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Experience 2 -->
+          <div class="timeline-item flex items-start opacity-0 translate-x-8">
+            <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-600 rounded-full flex items-center justify-center relative z-10">
+              <div class="w-8 h-8 bg-white rounded-full"></div>
+            </div>
+            
+            <div class="ml-8">
+              <div class="text-purple-400 font-Inter text-sm mb-1">2022 - 2023</div>
+              <h3 class="text-xl font-Orbitron font-bold text-white mb-2">Frontend Developer</h3>
+              <p class="text-white/70 font-Inter leading-relaxed">
+                Developed user interfaces for web applications using React, TypeScript, and modern CSS frameworks. 
+                Collaborated with design teams to implement pixel-perfect designs and smooth animations.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Experience 3 -->
+          <div class="timeline-item flex items-start opacity-0 translate-x-8">
+            <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-pink-400 to-red-600 rounded-full flex items-center justify-center relative z-10">
+              <div class="w-8 h-8 bg-white rounded-full"></div>
+            </div>
+            
+            <div class="ml-8">
+              <div class="text-pink-400 font-Inter text-sm mb-1">2021 - 2022</div>
+              <h3 class="text-xl font-Orbitron font-bold text-white mb-2">UI/UX Designer</h3>
+              <p class="text-white/70 font-Inter leading-relaxed">
+                Designed user interfaces and experiences for mobile and web applications. 
+                Created wireframes, prototypes, and design systems using Figma and Adobe Creative Suite.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  import { gsap } from 'gsap';
+  
+  function initAboutAnimations() {
+    // Set initial states
+    gsap.set('.page-title', { opacity: 0, y: 60 });
+    gsap.set('.page-subtitle', { opacity: 0, y: 40 });
+    gsap.set('.profile-image', { opacity: 0, x: 80 });
+    gsap.set('.bio-content', { opacity: 0, x: -80 });
+    gsap.set('.section-title', { opacity: 0, y: 40 });
+    gsap.set('.skill-category', { opacity: 0, y: 60 });
+    gsap.set('.timeline-item', { opacity: 0, x: 80 });
+    gsap.set('.skill-bar', { width: '0%' });
+    
+    // Animate page header
+    const headerTl = gsap.timeline({ delay: 0.3 });
+    headerTl
+      .to('.page-title', {
+        duration: 1,
+        opacity: 1,
+        y: 0,
+        ease: 'power3.out'
+      })
+      .to('.page-subtitle', {
+        duration: 0.8,
+        opacity: 1,
+        y: 0,
+        ease: 'power3.out'
+      }, '-=0.6');
+    
+    // Animate bio section
+    gsap.to('.profile-image', {
+      scrollTrigger: {
+        trigger: '.profile-image',
+        start: 'top 80%',
+        end: 'bottom 20%',
+        toggleActions: 'play none none reverse'
+      },
+      duration: 1,
+      opacity: 1,
+      x: 0,
+      ease: 'power3.out'
+    });
+    
+    gsap.to('.bio-content', {
+      scrollTrigger: {
+        trigger: '.bio-content',
+        start: 'top 80%',
+        end: 'bottom 20%',
+        toggleActions: 'play none none reverse'
+      },
+      duration: 1,
+      opacity: 1,
+      x: 0,
+      ease: 'power3.out',
+      delay: 0.2
+    });
+    
+    // Animate section titles
+    gsap.to('.section-title', {
+      scrollTrigger: {
+        trigger: '.section-title',
+        start: 'top 85%',
+        toggleActions: 'play none none reverse'
+      },
+      duration: 0.8,
+      opacity: 1,
+      y: 0,
+      ease: 'power3.out'
+    });
+    
+    // Animate skill categories
+    gsap.to('.skill-category', {
+      scrollTrigger: {
+        trigger: '.skill-category',
+        start: 'top 80%',
+        end: 'bottom 20%',
+        toggleActions: 'play none none reverse'
+      },
+      duration: 0.8,
+      opacity: 1,
+      y: 0,
+      stagger: 0.2,
+      ease: 'power3.out',
+      onComplete: animateSkillBars
+    });
+    
+    // Animate timeline items
+    gsap.to('.timeline-item', {
+      scrollTrigger: {
+        trigger: '.timeline-item',
+        start: 'top 80%',
+        end: 'bottom 20%',
+        toggleActions: 'play none none reverse'
+      },
+      duration: 0.8,
+      opacity: 1,
+      x: 0,
+      stagger: 0.2,
+      ease: 'power3.out'
+    });
+  }
+  
+  function animateSkillBars() {
+    const skillBars = document.querySelectorAll('.skill-bar');
+    
+    skillBars.forEach(bar => {
+      const targetWidth = bar.getAttribute('data-width') + '%';
+      gsap.to(bar, {
+        duration: 1.5,
+        width: targetWidth,
+        ease: 'power2.out',
+        delay: Math.random() * 0.5
+      });
+    });
+  }
+  
+  // Load ScrollTrigger and initialize
+  import('gsap/ScrollTrigger').then((ScrollTrigger) => {
+    gsap.registerPlugin(ScrollTrigger.ScrollTrigger);
+    initAboutAnimations();
+  });
+  
+  // Re-initialize after page transitions
+  document.addEventListener('astro:after-swap', () => {
+    import('gsap/ScrollTrigger').then((ScrollTrigger) => {
+      gsap.registerPlugin(ScrollTrigger.ScrollTrigger);
+      initAboutAnimations();
+    });
+  });
+</script>

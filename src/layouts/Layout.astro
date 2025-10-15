@@ -3,47 +3,56 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
-const { title, description } = Astro.props;
+
 interface Props {
   title: string;
-  description: string;
-  //image?: ImageMetadata;
+  description?: string;
 }
+
+const { title, description = "未来的でミニマルなポートフォリオサイト" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="ja" data-theme="dark">
   <head>
     <BaseHead title={title} description={description} />
     <script is:inline>
-      console.log('Layout loaded');
-      if (localStorage.getItem('theme') === null) {
-        const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const theme = isDarkMode ? 'dark' : 'light';
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-      } else {
+      // Initialize theme
+      function initTheme() {
         const savedTheme = localStorage.getItem('theme');
-        document.documentElement.setAttribute('data-theme', savedTheme);
+        const theme = savedTheme || 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
       }
+      
+      // Apply theme immediately to prevent flash
+      initTheme();
     </script>
   </head>
-  <body>
+  <body class="min-h-screen gradient-bg">
     <Header />
-    <main>
+    <main class="min-h-screen">
       <slot />
     </main>
     <Footer />
 
     <script>
+      // Theme toggle functionality
+      function toggleTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+      }
+      
+      // Make toggle function globally available
+      window.toggleTheme = toggleTheme;
+
       // Handle Astro view transitions
       document.addEventListener('astro:after-swap', () => {
-        console.log('Astro view swapped');
-        // Reapply theme after Astro partial hydration
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-          document.documentElement.setAttribute('data-theme', savedTheme);
-        }
+        // Reapply theme after page transition
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        window.toggleTheme = toggleTheme;
       });
     </script>
   </body>

@@ -1,0 +1,274 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Portfolio - Works" description="私のプロジェクトとWebデザイン作品のギャラリー">
+  <!-- Page Header -->
+  <section class="pt-32 pb-16 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <h1 class="page-title font-Orbitron font-black text-5xl md:text-7xl mb-6 opacity-0 translate-y-8">
+        <span class="glow-text">Works</span>
+      </h1>
+      <p class="page-subtitle text-xl text-white/80 font-Inter max-w-2xl mx-auto opacity-0 translate-y-8">
+        A showcase of my latest projects and design explorations
+      </p>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="pb-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Project 1 -->
+        <article class="project-card group cursor-pointer opacity-0 translate-y-8">
+          <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-cyan-500/20 to-purple-600/20 backdrop-blur-sm border border-white/10 hover:border-white/30 transition-all duration-500">
+            <!-- Project Image Placeholder -->
+            <div class="aspect-video bg-gradient-to-br from-cyan-400 to-purple-600 p-8 flex items-center justify-center">
+              <svg class="w-16 h-16 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            
+            <!-- Project Info -->
+            <div class="p-6">
+              <h3 class="text-xl font-Orbitron font-bold mb-2 text-white group-hover:text-cyan-400 transition-colors duration-300">
+                E-commerce Platform
+              </h3>
+              <p class="text-white/70 font-Inter text-sm mb-4">
+                Modern e-commerce solution built with React and Node.js
+              </p>
+              
+              <!-- Tech Stack -->
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 text-xs bg-cyan-500/20 text-cyan-400 rounded-full">React</span>
+                <span class="px-3 py-1 text-xs bg-purple-500/20 text-purple-400 rounded-full">TypeScript</span>
+                <span class="px-3 py-1 text-xs bg-pink-500/20 text-pink-400 rounded-full">Tailwind</span>
+              </div>
+              
+              <!-- Links -->
+              <div class="flex gap-3">
+                <a href="#" class="text-cyan-400 hover:text-cyan-300 transition-colors duration-300">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                </a>
+                <a href="#" class="text-cyan-400 hover:text-cyan-300 transition-colors duration-300">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+            <!-- Hover Effect -->
+            <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card group cursor-pointer opacity-0 translate-y-8">
+          <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-600/20 backdrop-blur-sm border border-white/10 hover:border-white/30 transition-all duration-500">
+            <div class="aspect-video bg-gradient-to-br from-purple-400 to-pink-600 p-8 flex items-center justify-center">
+              <svg class="w-16 h-16 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            
+            <div class="p-6">
+              <h3 class="text-xl font-Orbitron font-bold mb-2 text-white group-hover:text-purple-400 transition-colors duration-300">
+                Mobile App Design
+              </h3>
+              <p class="text-white/70 font-Inter text-sm mb-4">
+                Minimalist mobile app interface with smooth animations
+              </p>
+              
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 text-xs bg-purple-500/20 text-purple-400 rounded-full">Figma</span>
+                <span class="px-3 py-1 text-xs bg-pink-500/20 text-pink-400 rounded-full">React Native</span>
+                <span class="px-3 py-1 text-xs bg-cyan-500/20 text-cyan-400 rounded-full">GSAP</span>
+              </div>
+              
+              <div class="flex gap-3">
+                <a href="#" class="text-purple-400 hover:text-purple-300 transition-colors duration-300">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                </a>
+                <a href="#" class="text-purple-400 hover:text-purple-300 transition-colors duration-300">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+            <div class="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card group cursor-pointer opacity-0 translate-y-8">
+          <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-pink-500/20 to-red-600/20 backdrop-blur-sm border border-white/10 hover:border-white/30 transition-all duration-500">
+            <div class="aspect-video bg-gradient-to-br from-pink-400 to-red-600 p-8 flex items-center justify-center">
+              <svg class="w-16 h-16 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+              </svg>
+            </div>
+            
+            <div class="p-6">
+              <h3 class="text-xl font-Orbitron font-bold mb-2 text-white group-hover:text-pink-400 transition-colors duration-300">
+                Analytics Dashboard
+              </h3>
+              <p class="text-white/70 font-Inter text-sm mb-4">
+                Real-time analytics dashboard with interactive charts
+              </p>
+              
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 text-xs bg-pink-500/20 text-pink-400 rounded-full">Vue.js</span>
+                <span class="px-3 py-1 text-xs bg-cyan-500/20 text-cyan-400 rounded-full">D3.js</span>
+                <span class="px-3 py-1 text-xs bg-purple-500/20 text-purple-400 rounded-full">Firebase</span>
+              </div>
+              
+              <div class="flex gap-3">
+                <a href="#" class="text-pink-400 hover:text-pink-300 transition-colors duration-300">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                </a>
+                <a href="#" class="text-pink-400 hover:text-pink-300 transition-colors duration-300">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+            <div class="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-red-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          </div>
+        </article>
+
+        <!-- Additional projects can be added here -->
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="cta-title font-Orbitron font-bold text-3xl md:text-4xl mb-6 opacity-0 translate-y-8">
+        Interested in collaborating?
+      </h2>
+      <p class="cta-subtitle text-xl text-white/80 font-Inter mb-8 opacity-0 translate-y-8">
+        Let's create something amazing together
+      </p>
+      <div class="cta-button opacity-0 translate-y-8">
+        <a 
+          href="/contact" 
+          class="inline-block px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full font-Inter font-medium text-white hover:scale-105 transition-all duration-300"
+        >
+          Get In Touch
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  import { gsap } from 'gsap';
+  
+  function initWorksAnimations() {
+    // Set initial states
+    gsap.set('.page-title', { opacity: 0, y: 60 });
+    gsap.set('.page-subtitle', { opacity: 0, y: 40 });
+    gsap.set('.project-card', { opacity: 0, y: 80, scale: 0.9 });
+    gsap.set('.cta-title', { opacity: 0, y: 40 });
+    gsap.set('.cta-subtitle', { opacity: 0, y: 30 });
+    gsap.set('.cta-button', { opacity: 0, y: 20 });
+    
+    // Animate page header
+    const headerTl = gsap.timeline({ delay: 0.3 });
+    headerTl
+      .to('.page-title', {
+        duration: 1,
+        opacity: 1,
+        y: 0,
+        ease: 'power3.out'
+      })
+      .to('.page-subtitle', {
+        duration: 0.8,
+        opacity: 1,
+        y: 0,
+        ease: 'power3.out'
+      }, '-=0.6');
+    
+    // Animate project cards with stagger
+    gsap.to('.project-card', {
+      scrollTrigger: {
+        trigger: '.project-card',
+        start: 'top 85%',
+        end: 'bottom 15%',
+        toggleActions: 'play none none reverse'
+      },
+      duration: 0.8,
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      stagger: 0.15,
+      ease: 'power3.out'
+    });
+    
+    // Animate CTA section
+    gsap.to(['.cta-title', '.cta-subtitle', '.cta-button'], {
+      scrollTrigger: {
+        trigger: '.cta-title',
+        start: 'top 80%',
+        end: 'bottom 20%',
+        toggleActions: 'play none none reverse'
+      },
+      duration: 0.6,
+      opacity: 1,
+      y: 0,
+      stagger: 0.1,
+      ease: 'power3.out'
+    });
+    
+    // Add hover animations for project cards
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    projectCards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        gsap.to(card, {
+          duration: 0.3,
+          y: -10,
+          scale: 1.02,
+          ease: 'power2.out'
+        });
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        gsap.to(card, {
+          duration: 0.3,
+          y: 0,
+          scale: 1,
+          ease: 'power2.out'
+        });
+      });
+    });
+  }
+  
+  // Load ScrollTrigger and initialize
+  import('gsap/ScrollTrigger').then((ScrollTrigger) => {
+    gsap.registerPlugin(ScrollTrigger.ScrollTrigger);
+    initWorksAnimations();
+  });
+  
+  // Re-initialize after page transitions
+  document.addEventListener('astro:after-swap', () => {
+    import('gsap/ScrollTrigger').then((ScrollTrigger) => {
+      gsap.registerPlugin(ScrollTrigger.ScrollTrigger);
+      initWorksAnimations();
+    });
+  });
+</script>
